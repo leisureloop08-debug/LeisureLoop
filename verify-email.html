@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Verify Email | LeisureLoop</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;background:#f4f7f5;font-family:Arial,sans-serif;color:#17352b}.card{width:min(92%,430px);padding:32px;background:#fff;border-radius:18px;box-shadow:0 12px 40px #17352b14;text-align:center}h1{margin-top:0}p{line-height:1.6;color:#52645c}a{color:#087f5b;font-weight:700}#status{margin:20px 0}
+</style>
+</head>
+<body><main class="card"><h1>LeisureLoop</h1><h2>Email verification</h2><p id="status">Checking your verification link…</p><a href="/login.html">Go to login</a></main>
+<script>
+(async()=>{
+ const status=document.getElementById("status");
+ const token=new URLSearchParams(location.search).get("token");
+ if(!token){status.textContent="This verification link is missing its token.";return;}
+ try{
+  const response=await fetch("/api/auth-verify-email",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({token})});
+  const data=await response.json();
+  status.textContent=data.message||data.error||"Unable to verify this link.";
+ }catch(e){status.textContent="Connection error. Please try again later.";}
+})();
+</script></body></html>
