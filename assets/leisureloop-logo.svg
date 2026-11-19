@@ -1,9 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
-  <title id="title">LeisureLoop logo</title>
-  <desc id="desc">A modern double-loop monogram inspired by the letters L and L.</desc>
-  <rect width="128" height="128" rx="34" fill="#FFF9ED"/>
-  <path d="M40 27v45c0 18 11 29 29 29h21" fill="none" stroke="#285B48" stroke-linecap="round" stroke-linejoin="round" stroke-width="13"/>
-  <path d="M72 40c16 0 27 10 27 25 0 15-11 25-27 25H54" fill="none" stroke="#E9855E" stroke-linecap="round" stroke-linejoin="round" stroke-width="13"/>
-  <circle cx="89" cy="101" r="6.5" fill="#F1C66E"/>
+<title id="title">LeisureLoop</title><desc id="desc">A blue-to-teal location pin flowing into a green infinity loop.</desc>
+<defs><linearGradient id="pin" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0878E8"/><stop offset="1" stop-color="#08C6CF"/></linearGradient><linearGradient id="loop" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#08BFD0"/><stop offset="1" stop-color="#19D34A"/></linearGradient></defs>
+<path d="M64 7C35 7 15 28 15 55c0 24 22 48 49 72 27-24 49-48 49-72C113 28 93 7 64 7Zm0 21c15 0 27 12 27 27S79 82 64 82 37 70 37 55s12-27 27-27Z" fill="url(#pin)" fill-rule="evenodd"/>
+<path d="M8 104c17-20 35-20 52-1 17 19 34 19 51 0" fill="none" stroke="url(#loop)" stroke-width="14" stroke-linecap="round"/>
+<path d="M8 104c17 20 35 20 52 1" fill="none" stroke="#0878E8" stroke-width="14" stroke-linecap="round"/>
+<circle cx="64" cy="55" r="8" fill="#13D34F"/>
 </svg>
-
