@@ -62,6 +62,123 @@
 @media(max-width:900px){.hero{grid-template-columns:1fr;gap:28px;padding-top:43px}.hero-photo{height:330px}.grid{grid-template-columns:repeat(2,1fr)}.how-inner{grid-template-columns:1fr;gap:25px}.nav{gap:17px}}@media(max-width:600px){.shell{padding:0 18px}.topbar{height:67px}.nav{gap:12px}.nav a:not(.owner-link){display:none}.brand{font-size:18px}.avatar{width:32px;height:32px}.hero{padding-top:35px}h1{font-size:49px}.hero-photo{height:270px;border-top-right-radius:90px}.searchbox{flex-wrap:wrap}.search-part{padding:8px;min-width:calc(50% - 1px)}.divider{display:none}.search-btn{width:100%;height:42px}.section-head{display:block;margin-top:38px}.section-head p{margin-top:7px}.grid{grid-template-columns:1fr}.card-img{height:210px}.steps{grid-template-columns:1fr}.step{min-height:auto}.how{margin-top:50px;padding:42px 0}.footer{gap:10px;flex-wrap:wrap}.stats{grid-template-columns:1fr 1fr}.stat:last-child{grid-column:1/-1}.dash-grid{grid-template-columns:1fr}.owner-head h1{font-size:34px}}
  #locationModal .modal{width:min(480px,100%)}#locationModal .primary{margin:8px 0 14px}#locationModal .book-btn{width:100%;margin-top:5px}#locationStatus{min-height:30px}
 .profile-wrap{position:relative}.avatar{border:0;cursor:pointer}.profile-menu{display:none;position:absolute;right:0;top:46px;width:220px;background:var(--white);border:1px solid var(--line);border-radius:13px;padding:8px;box-shadow:0 16px 40px #1b2a201f;z-index:30}.profile-menu.open{display:block}.profile-menu-head{padding:10px 10px 12px;border-bottom:1px solid var(--line);margin-bottom:5px;overflow:hidden}.profile-menu-head strong,.profile-menu-head small{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.profile-menu-head strong{font-size:12px}.profile-menu-head small{font-size:10px;color:var(--muted);margin-top:4px}.profile-menu>button{width:100%;border:0;background:transparent;text-align:left;border-radius:8px;padding:11px 10px;font-size:12px;color:var(--ink)}.profile-menu>button:hover{background:#eef2eb}.settings-modal .field input{width:100%}.settings-hint{font-size:10px;color:var(--muted);line-height:1.5;margin:8px 0}
+
+/* LeisureLoop visual refresh — high contrast, accessible colour system */
+:root{
+ --ink:#10243A;--muted:#536579;--paper:#F4F7FB;--white:#FFFFFF;
+ --green:#087E8B;--green2:#DDF7F2;--orange:#C8F169;--line:#D8E1EB;
+ --shadow:0 18px 48px rgba(16,36,58,.12);
+}
+body{background:var(--paper);color:var(--ink)}
+.shell{max-width:1320px}
+.topbar{height:82px;border-bottom:1px solid #DFE7F0}
+.brand{font-size:23px;letter-spacing:-1.2px}
+.brand-mark{width:43px;height:43px}
+.nav{gap:30px}
+.nav a,.nav button{color:#344B60;font-size:13px;font-weight:600}
+.nav a:hover,.nav button:hover{color:#087E8B}
+.login-btn{background:#10243A!important;color:#fff!important;border:1px solid #10243A!important;border-radius:999px!important;padding:11px 20px!important}
+.login-btn:hover{background:#087E8B!important;border-color:#087E8B!important;color:#fff!important}
+.hero{
+ position:relative;isolation:isolate;overflow:hidden;
+ margin:30px 0 58px;padding:58px 52px;
+ grid-template-columns:1.08fr .92fr;gap:44px;
+ border-radius:30px;background:linear-gradient(120deg,#10243A 0%,#153D59 64%,#087E8B 120%);
+ box-shadow:0 24px 60px rgba(16,36,58,.17)
+}
+.hero:before{content:"";position:absolute;z-index:-1;width:440px;height:440px;border:1px solid rgba(200,241,105,.16);border-radius:50%;right:34%;top:-300px;box-shadow:0 0 0 45px rgba(200,241,105,.035),0 0 0 90px rgba(200,241,105,.025)}
+.eyebrow{color:#087E8B;font-size:10px;letter-spacing:1.7px}
+.hero .eyebrow{color:#C8F169}
+.hero .eyebrow:before{background:#C8F169;width:28px;height:2px}
+h1{font-family:Manrope,'DM Sans',sans-serif;font-weight:800;font-size:clamp(42px,4.5vw,64px);line-height:1.04;letter-spacing:-2.8px;color:#fff;margin:17px 0 18px}
+h1 em{color:#C8F169;font-style:normal;font-weight:800}
+.hero-copy{color:#D5E1EC;font-size:15px;line-height:1.8;max-width:460px}
+.searchbox{border:0;border-radius:17px;padding:8px;background:#fff;box-shadow:0 12px 30px rgba(0,0,0,.2)}
+.search-part label{color:#536579;letter-spacing:.7px;font-size:9px}
+.search-part select,.search-part input{color:#10243A;font-weight:600}
+.search-btn{background:#C8F169;color:#10243A;border-radius:12px;width:50px;height:50px;font-weight:800}
+.search-btn:hover{background:#B6E64D}
+.trust{color:#D5E1EC}
+.avatars span{border-color:#153D59}
+.hero-photo{height:420px;border-radius:24px 90px 24px 24px;box-shadow:0 20px 45px rgba(0,0,0,.22);border:5px solid rgba(255,255,255,.16)}
+.photo-caption{left:18px;bottom:18px;background:#10243A;color:#fff;border:1px solid rgba(255,255,255,.18);box-shadow:0 10px 25px rgba(0,0,0,.18)}
+.photo-caption span{color:#D5E1EC}
+.photo-tag{background:#C8F169;color:#10243A}
+.section-head{margin:54px 0 22px}
+.section-head h2,.how h2{font-family:Manrope,'DM Sans',sans-serif;font-weight:800;letter-spacing:-1.4px;color:#10243A}
+.section-head h2{font-size:clamp(27px,3vw,36px)}
+.section-head p{color:#536579;font-size:12px}
+.filters{gap:10px}
+.filter{border:1px solid #C9D5E2;background:#fff;color:#344B60;padding:10px 17px;font-weight:700}
+.filter.active,.filter:hover{background:#10243A;border-color:#10243A;color:#C8F169}
+.grid{gap:22px}
+.card{border:1px solid #D8E1EB;border-radius:20px;box-shadow:0 7px 22px rgba(16,36,58,.045)}
+.card:hover{box-shadow:0 18px 38px rgba(16,36,58,.13);border-color:#A9C6D1}
+.card-img{height:205px}
+.card-body{padding:19px}
+.type{color:#087E8B;letter-spacing:1.1px}
+.rating b{color:#10243A}
+.card h3{font-family:Manrope,sans-serif;font-weight:800;color:#10243A}
+.location{color:#536579}
+.price{color:#10243A}
+.book-btn{border:1px solid #10243A;background:#10243A;color:#fff;border-radius:999px;padding:10px 16px}
+.book-btn:hover{background:#087E8B;border-color:#087E8B;color:#fff}
+.note{color:#536579;line-height:1.6}
+.how{background:#10243A;margin-top:84px;padding:72px 0 78px;position:relative;overflow:hidden}
+.how:before{content:"";position:absolute;width:520px;height:520px;border:1px solid rgba(200,241,105,.13);border-radius:50%;right:-190px;top:-340px;box-shadow:0 0 0 50px rgba(200,241,105,.025),0 0 0 100px rgba(200,241,105,.02)}
+.how .eyebrow{color:#C8F169}
+.how .eyebrow:before{background:#C8F169}
+.how h2{color:#fff;font-size:clamp(30px,3.5vw,42px)}
+.how p{color:#C8D5E1}
+.steps{gap:14px}
+.step{background:#193A54;border:1px solid rgba(255,255,255,.12);border-radius:17px;padding:21px 18px}
+.step-num{color:#C8F169;font:800 22px Manrope}
+.step h3{color:#fff;font:800 13px Manrope}
+.step p{color:#C8D5E1}
+.footer{padding:32px 0;color:#536579;align-items:center}
+.footer .brand{color:#10243A}
+.footer .brand-wordmark{background:linear-gradient(90deg,#10243A 0%,#087E8B 62%,#48A83B 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.footer a:not(.brand){font-weight:700;color:#087E8B}
+.modal-backdrop{background:rgba(8,22,38,.76);backdrop-filter:blur(5px)}
+.modal{border:1px solid #D8E1EB;box-shadow:0 30px 90px rgba(0,0,0,.28)}
+.modal h2{font:800 28px Manrope;color:#10243A}
+.close{background:#EAF0F6;color:#10243A}
+.field label{color:#344B60}
+.field input:focus,.field select:focus{outline:3px solid rgba(8,126,139,.16);border-color:#087E8B}
+.primary{background:#10243A;color:#C8F169}
+.primary:hover{background:#087E8B;color:#fff}
+.success{background:#E4F8EF;color:#126A45}
+.toast{background:#10243A}
+.owner-page .owner-head h1{color:#10243A}
+.stat,.panel{border-color:#D8E1EB;box-shadow:0 8px 24px rgba(16,36,58,.05)}
+.stat strong{color:#10243A}
+.status{background:#E4F8EF;color:#126A45}
+.role-option:hover{border-color:#087E8B}
+.role-icon{background:#DDF7F2;color:#087E8B}
+.role-option:last-child .role-icon{background:#EFF8D8;color:#426B13}
+@media(max-width:900px){
+ .hero{padding:42px 34px;margin:22px 0 46px;gap:28px}
+ .hero-photo{height:350px}
+}
+@media(max-width:600px){
+ .shell{padding:0 18px}
+ .topbar{height:70px}
+ .brand{font-size:19px}
+ .brand-mark{width:37px;height:37px}
+ .hero{padding:34px 22px 24px;margin:17px 0 42px;border-radius:23px;gap:24px}
+ h1{font-size:clamp(39px,11vw,50px);letter-spacing:-2px}
+ .hero-copy{font-size:14px}
+ .hero-photo{height:270px;border-radius:18px 65px 18px 18px}
+ .searchbox{border-radius:14px}
+ .search-part{min-width:calc(50% - 1px)}
+ .section-head h2{font-size:29px}
+ .how{padding:50px 0 54px;margin-top:55px}
+ .footer{align-items:flex-start;flex-direction:column}
+}
+@media(prefers-reduced-motion:no-preference){
+ .card,.book-btn,.filter,.login-btn{transition:all .2s ease}
+}
+
 </style>
 </head>
 <body>
@@ -78,7 +195,7 @@
     </main>
   </div>
   <section class="how" id="how"><div class="shell how-inner"><div><div class="eyebrow">Good days, made simple</div><h2>More time enjoying.<br>Less time planning.</h2><p>LeisureLoop helps you find and request nearby spaces by the hour. Owners confirm the details directly, so every plan starts with a real conversation.</p></div><div class="steps"><div class="step"><span class="step-num">01</span><h3>Pick your happy place</h3><p>Browse pools, courts and open-air spots nearby.</p></div><div class="step"><span class="step-num">02</span><h3>Send a request</h3><p>Choose a day, time and group size that work for you.</p></div><div class="step"><span class="step-num">03</span><h3>Get the details</h3><p>The owner confirms your plan before anything is final.</p></div></div></div></section>
-  <footer class="shell footer"><a class="brand" href="#"><img class="brand-mark" src="/assets/leisureloop-logo.svg" alt="LeisureLoop">leisureloop</a><span id="footerLocation">Made for a little more local leisure · Wherever you are</span><span>Booking requests only · No online payments</span><a href="/terms">Owner Property Damage Terms</a></footer>
+  <footer class="shell footer"><a class="brand" href="#"><img class="brand-mark" src="/assets/leisureloop-logo.svg" alt="LeisureLoop"><span class="brand-wordmark">LeisureLoop</span></a><span id="footerLocation">Made for a little more local leisure · Wherever you are</span><span>Booking requests only · No online payments</span><a href="/terms">Owner Property Damage Terms</a></footer>
 </div>
 <div id="ownerView" class="owner"><div class="shell owner-page"><header class="owner-head"><div><div class="eyebrow">Your space, your schedule</div><h1>Owner dashboard <span class="demo-badge">PREVIEW</span></h1><p class="hero-copy" style="margin:0">A simple home for your listings and booking requests.</p></div><button id="backStore" class="back-btn">← Back to explore</button></header><div class="stats"><div class="stat"><span>YOUR LISTINGS</span><strong id="listingCount">0</strong></div><div class="stat"><span>NEW REQUESTS</span><strong id="requestCount">0</strong></div><div class="stat"><span>THIS MONTH</span><strong>₹0</strong></div></div><div class="dash-grid"><section class="panel"><h2>Your spaces</h2><div id="ownerListings"></div><button class="book-btn" id="addListing" style="margin-top:14px">＋ Add a verified space</button></section><section class="panel"><h2>Booking requests</h2><div id="requests"><div class="request-empty">Loading requests…</div></div><h2 style="margin-top:22px">My booking requests</h2><div id="myBookings"><div class="request-empty">Loading bookings…</div></div></section></div><p class="note" id="ownerNotice">Only approved spaces are visible to customers. New listings are submitted for review.</p></div></div>
 <div class="modal-backdrop" id="modal"><div class="modal"><div class="modal-head"><div><div class="eyebrow">A lovely plan starts here</div><h2>Request this space</h2></div><button class="close" id="closeModal" aria-label="Close">×</button></div><p class="modal-desc" id="modalSpace"></p><form id="bookingForm"><div class="form-row"><div class="field"><label for="bookDate">Date</label><input id="bookDate" type="date" required></div><div class="field"><label for="bookTime">Start time</label><select id="bookTime" required><option value="">Choose a time</option><option>09:00</option><option>11:00</option><option>13:00</option><option>15:00</option><option>17:00</option></select></div></div><div class="form-row"><div class="field"><label for="duration">Hours</label><select id="duration"><option>1</option><option>2</option><option>3</option><option>4</option></select></div><div class="field"><label for="group">Group size</label><input id="group" type="number" min="1" max="30" value="4" required></div></div><div class="field"><label for="guestName">Your name</label><input id="guestName" placeholder="Name" required></div><button class="primary" type="submit">Send booking request</button></form><div class="success" id="success"><strong>Booking request sent ✨</strong>Your request has been saved. The venue owner can review it in their dashboard.</div><p class="note">No payment is collected. The owner would confirm availability and final details.</p></div></div><div class="modal-backdrop" id="listingModal"><div class="modal"><div class="modal-head"><div><div class="eyebrow">Share your space</div><h2>Add a leisure space</h2></div><button class="close" id="closeListing" aria-label="Close">×</button></div><form id="listingForm"><div class="field"><label for="venueTitle">SPACE NAME</label><input id="venueTitle" required minlength="3" maxlength="120"></div><div class="form-row"><div class="field"><label for="venueCategory">CATEGORY</label><select id="venueCategory"><option>Pool</option><option>Court</option><option>Garden</option><option>Studio</option><option>Other</option></select></div><div class="field"><label for="venueRate">HOURLY RATE (₹)</label><input id="venueRate" type="number" min="0" step="0.01" required></div></div><div class="field"><label for="venueDescription">DESCRIPTION</label><input id="venueDescription" maxlength="1000"></div><div class="field"><label for="venueAddress">FULL ADDRESS</label><input id="venueAddress" required></div><div class="field"><label for="venueCity">CITY</label><input id="venueCity" required></div><button class="primary" type="submit">Submit space for review</button></form><p class="note">New spaces remain pending until an administrator approves them.</p></div></div><div class="modal-backdrop" id="settingsModal"><div class="modal settings-modal"><div class="modal-head"><div><div class="eyebrow">Your LeisureLoop account</div><h2>Settings</h2></div><button class="close" id="closeSettings" aria-label="Close">×</button></div><p class="modal-desc" id="settingsAccount"></p><form id="changePasswordForm"><h3 style="font:600 14px Manrope;margin:20px 0 8px">Change password</h3><div class="field"><label for="newPassword">NEW PASSWORD</label><input id="newPassword" type="password" minlength="8" autocomplete="new-password" placeholder="At least 8 characters" required></div><div class="field"><label for="confirmPassword">CONFIRM NEW PASSWORD</label><input id="confirmPassword" type="password" minlength="8" autocomplete="new-password" placeholder="Enter it again" required></div><p class="settings-hint">Use at least 8 characters. Your password is updated securely through Supabase.</p><button class="primary" id="savePassword" type="submit">Update password</button></form><div class="message" id="settingsMessage" role="status" aria-live="polite"></div><section style="border-top:1px solid var(--line);margin-top:24px;padding-top:20px"><h3 style="font:600 14px Manrope;color:#a44332;margin:0 0 7px">Delete account</h3><p class="settings-hint">Permanently delete your LeisureLoop sign-in and account profile. This action cannot be undone. Existing booking or listing records may be retained where required for service, safety or legal reasons.</p><label for="deleteConfirm" style="display:block;font-size:10px;font-weight:700;margin:12px 0 6px">TYPE DELETE TO CONFIRM</label><input id="deleteConfirm" type="text" autocomplete="off" placeholder="DELETE" style="width:100%;padding:12px;border:1px solid var(--line);border-radius:10px"><label for="deletePassword" style="display:block;font-size:10px;font-weight:700;margin:12px 0 6px">CURRENT ACCOUNT PASSWORD</label><input id="deletePassword" type="password" autocomplete="current-password" placeholder="Enter your current password" style="width:100%;padding:12px;border:1px solid var(--line);border-radius:10px"><button class="primary" id="deleteAccountBtn" type="button" style="background:#a44332">Permanently delete my account</button><p class="settings-hint" id="deleteAccountMessage" role="status" aria-live="polite"></p></section></div></div><div class="toast" id="toast"></div><div class="modal-backdrop" id="locationModal"><div class="modal"><div class="modal-head"><div><div class="eyebrow">A more local LeisureLoop</div><h2>Where should we explore?</h2></div><button class="close" id="closeLocation" aria-label="Close">×</button></div><p class="modal-desc">Share your location to discover leisure spaces and experiences around you. You can also choose your city manually.</p><button class="primary" id="useLocation">◎ Use my current location</button><div class="field"><label for="manualLocation">CHOOSE YOUR CITY</label><select id="manualLocation"><option value="">Select a location</option><option>Channapatna</option><option>Ramanagara</option><option>Bengaluru</option><option>Mandya</option><option>Mysuru</option><option>Other location</option></select></div><p class="note" id="locationStatus">Your location is only used to tailor the places shown on this website. You can change it anytime.</p><button class="book-btn" id="skipLocation">Continue without location</button></div></div>
