@@ -36,8 +36,7 @@ returns trigger
 language plpgsql
 security definer
 set search_path = public
-as $$
-declare
+as $
 begin
   if new.raw_user_meta_data ->> 'legal_terms_accepted' = 'true' then
 
