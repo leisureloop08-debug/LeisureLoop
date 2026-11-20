@@ -35,7 +35,7 @@ body{background:#F4F7FB;color:#10243A}
 .field input{border-color:#D8E1EB;color:#10243A}
 .field input:focus{border-color:#087E8B;box-shadow:0 0 0 3px rgba(8,126,139,.14)}
 .role.active{border-color:#087E8B;background:#EAF8F6}
-.legal-consent{margin:12px 0 15px}.legal-consent[hidden]{display:none}.legal-consent label{display:flex;align-items:flex-start;gap:9px;font-size:11px;line-height:1.55;color:#536579}.legal-consent input{margin-top:2px;accent-color:#087E8B}.legal-consent a{color:#087E8B;font-weight:700}.action{background:#10243A;color:#C8F169;border-radius:999px}
+.legal-consent{margin:12px 0 15px}.legal-consent[hidden]{display:none}.legal-consent label{display:flex;align-items:flex-start;gap:9px;font-size:11px;line-height:1.55;color:#536579}.legal-consent input{margin-top:2px;accent-color:#087E8B}.legal-consent a{color:#075C68;font-weight:700;text-decoration:underline}.action{background:#10243A;color:#C8F169;border-radius:999px}
 .action:hover{background:#087E8B;color:#fff}
 .links button,.resend,.back{color:#087E8B}
 .message.ok{background:#E4F8EF;color:#126A45}
@@ -72,7 +72,7 @@ body{background:#F4F7FB;color:#10243A}
 <div class="field"><label for="email">EMAIL ADDRESS</label><input id="email" type="email" autocomplete="email" placeholder="you@example.com" required></div>
 <div class="field"><label for="password">PASSWORD</label><input id="password" type="password" autocomplete="current-password" minlength="8" placeholder="At least 8 characters" required></div>
 <div class="role-wrap" id="roleWrap"><div class="role-label">HOW WILL YOU USE LEISURELOOP?</div><div class="roles"><button class="role active" data-role="buyer" type="button"><strong>I'm a buyer</strong><span>Discover and request spaces</span></button><button class="role" data-role="owner" type="button"><strong>I'm an owner</strong><span>Submit my space for review</span></button></div></div>
-<div class="legal-consent" id="legalConsent" hidden><label><input id="acceptLegal" type="checkbox" required><span>I agree to the <a href="/terms-and-conditions.html" target="_blank" rel="noopener">Terms &amp; Conditions</a> and acknowledge the <a href="/privacy.html" target="_blank" rel="noopener">Privacy Policy</a>.</span></label></div>
+<div class="legal-consent" id="legalConsent" hidden><label><input id="acceptLegal" type="checkbox" required><span>I agree to the <a href="/terms-and-conditions.html" target="_blank" rel="noopener">Terms &amp; Conditions</a> and consent to use my name and email to create and secure my account. See the <a href="/privacy.html" target="_blank" rel="noopener">Privacy Policy</a> and <a href="/cookie-policy.html" target="_blank" rel="noopener">Cookie Policy</a>.</span></label></div>
 <button class="action" id="submitBtn" type="submit">Log in</button></form>
 <div class="links"><button id="forgotBtn" type="button">Forgot password?</button><span>Secure email authentication</span></div>
 <button class="resend" id="resendBtn" type="button" hidden>Resend verification email</button><div class="message" id="message" role="status" aria-live="polite"></div>
