@@ -326,7 +326,7 @@ function applyLocation(city) {
  }
  document.querySelector("#heroEyebrow").textContent = currentLocation === "your area" ? "Your city, your kind of leisure" : "Explore " + currentLocation + " at your pace";
  document.querySelector("#exploreEyebrow").textContent = "Discover places near " + currentLocation;
- document.querySelector("#exploreTitle").textContent = "Spaces near " + currentLocation + " are coming soon.";
+ document.querySelector("#exploreTitle").textContent = "Explore leisure spaces near " + currentLocation;
  document.querySelector("#footerLocation").textContent = "Made for a little more local leisure · " + currentLocation;
  document.querySelector("#cards").innerHTML = '<article class="card" style="grid-column:1/-1"><div class="card-body" style="padding:34px;text-align:center"><div class="role-icon" style="margin:0 auto 15px">⌂</div><h3>No spaces near ' + currentLocation + ' yet</h3><p class="location" style="display:block;max-width:390px;margin:0 auto">We are onboarding venue owners in ' + currentLocation + '. Approved listings will appear here as they become available.</p></div></article>';
 }
@@ -727,6 +727,21 @@ document.addEventListener('keydown',function(event){
   document.addEventListener('keydown',e=>{if(e.key==='Escape'&&menu.classList.contains('mobile-open')){menu.classList.remove('mobile-open');toggle.setAttribute('aria-expanded','false');toggle.focus();}});
  }
  const year=document.getElementById('copyrightYear');if(year)year.textContent=new Date().getFullYear();
+})();
+</script>
+
+<script>
+(function(){
+ const notice=document.getElementById('cookieNotice');
+ const dismiss=document.getElementById('dismissCookieNotice');
+ if(!notice||!dismiss)return;
+ let dismissed=false;
+ try{dismissed=localStorage.getItem('ll_cookie_notice_dismissed')==='1';}catch(_){}
+ if(!dismissed)notice.hidden=false;
+ dismiss.addEventListener('click',()=>{
+  notice.hidden=true;
+  try{localStorage.setItem('ll_cookie_notice_dismissed','1');}catch(_){}
+ });
 })();
 </script>
 </body>
