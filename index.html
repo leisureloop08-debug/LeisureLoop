@@ -26,7 +26,7 @@
 <meta property="og:image" content="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&amp;fit=crop&amp;w=1200&amp;q=75">
 <meta property="og:image:alt" content="Sunlit swimming pool framed by green trees">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="LeisureLoop | Discover Hourly Leisure Spaces">
+<meta name="twitter:title" content="LeisureLoop | Discover Leisure Spaces">
 <meta name="twitter:description" content="Explore pools, sports courts, studios and private spaces for your next day out.">
 <meta name="twitter:image" content="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&amp;fit=crop&amp;w=1200&amp;q=75">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -668,6 +668,23 @@ document.addEventListener('keydown',function(event){
   else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}
  }
 });
+</script><script>
+/* Focus the first control when a dialog opens and restore focus when it closes. */
+(function(){
+ let activeLayer=null,previousFocus=null;
+ const observer=new MutationObserver(function(){
+  const layers=Array.from(document.querySelectorAll('.modal-backdrop'));
+  const current=layers.reverse().find(layer=>layer.classList.contains('open')||layer.style.display==='flex');
+  if(current&&current!==activeLayer){
+   activeLayer=current;previousFocus=document.activeElement;
+   const first=current.querySelector('button:not([disabled]),input:not([disabled]),select:not([disabled]),a[href],[tabindex="0"]');
+   if(first)first.focus();else current.querySelector('.modal')?.focus();
+  }else if(!current&&activeLayer){
+   activeLayer=null;if(previousFocus&&previousFocus.isConnected)previousFocus.focus();previousFocus=null;
+  }
+ });
+ document.querySelectorAll('.modal-backdrop').forEach(layer=>observer.observe(layer,{attributes:true,attributeFilter:['class','style']}));
+})();
 </script></body>
 </html>
 
