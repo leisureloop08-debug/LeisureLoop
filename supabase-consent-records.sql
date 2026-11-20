@@ -4,7 +4,7 @@
 
 create table if not exists public.user_consents (
   id uuid primary key default gen_random_uuid(),
-  user_id uuid not null references auth.users(id) on delete cascade,
+  user_id uuid references auth.users(id) on delete set null,
   purpose text not null check (purpose in ('account_registration','booking_request','venue_listing')),
   terms_version text,
   privacy_version text,
