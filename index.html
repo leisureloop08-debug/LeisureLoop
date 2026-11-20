@@ -611,7 +611,7 @@ window.getLeisureLoopSupabaseClient = window.getLeisureLoopSupabaseClient || (()
   });
   $('#closeModal').onclick=()=>$('#modal').classList.remove('open');
   $('#bookingForm').addEventListener('submit',async e=>{
-    e.preventDefault();if(!chosen||!user)return;if(!(profile?.full_name||user.user_metadata?.full_name||'').trim()){toast('Please add your name to your account before sending a booking request.');return;}const button=e.currentTarget.querySelector('[type=submit]');button.disabled=true;button.textContent='Sending…';
+    e.preventDefault();if(!chosen||!user)return;if(!(profile?.full_name||user.user_metadata?.full_name||'').trim()){toast('Please add your name to your account before sending a booking request.');return;}const consentLog=await db.from('user_consents').insert({user_id:user.id,purpose:'booking_request',terms_version:'2026-11-20',privacy_version:'2026-11-20',accepted_at:new Date().toISOString()});if(consentLog.error){toast('We could not record your consent. Please try again later.');return;}const button=e.currentTarget.querySelector('[type=submit]');button.disabled=true;button.textContent='Sending…';
     const payload={venue_id:chosen.id,customer_id:user.id,booking_date:$('#bookDate').value,start_time:$('#bookTime').value,duration_hours:Number($('#duration').value),group_size:Number($('#group').value),customer_name:(profile?.full_name||user.user_metadata?.full_name||'').trim(),status:'pending'};
     const {error}=await db.from('bookings').insert(payload);
     if(error)toast(error.message||'Could not send booking request.');else{$('#bookingForm').style.display='none';$('#success').style.display='block';toast('Booking request sent.');await refreshDashboard();}
@@ -628,7 +628,7 @@ window.getLeisureLoopSupabaseClient = window.getLeisureLoopSupabaseClient || (()
   };
   $('#closeListing').onclick=()=>$('#listingModal').classList.remove('open');
   $('#listingForm').addEventListener('submit',async e=>{
-    e.preventDefault();const btn=e.currentTarget.querySelector('[type=submit]');btn.disabled=true;btn.textContent='Submitting…';
+    e.preventDefault();if(!user){toast('Please log in before submitting a venue.');return;}const consentLog=await db.from('user_consents').insert({user_id:user.id,purpose:'venue_listing',terms_version:'2026-11-20',privacy_version:'2026-11-20',accepted_at:new Date().toISOString()});if(consentLog.error){toast('We could not record your consent. Please try again later.');return;}const btn=e.currentTarget.querySelector('[type=submit]');btn.disabled=true;btn.textContent='Submitting…';
     const {error}=await db.from('venues').insert({owner_id:user.id,title:$('#venueTitle').value.trim(),category:$('#venueCategory').value,description:$('#venueDescription').value.trim(),address:$('#venueAddress').value.trim(),city:$('#venueCity').value.trim(),hourly_rate:Number($('#venueRate').value)});
     if(error)toast(error.message||'Could not submit space.');else{$('#listingModal').classList.remove('open');toast('Space submitted for review.');await refreshDashboard();}
     btn.disabled=false;btn.textContent='Submit venue for review';
