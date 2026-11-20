@@ -310,7 +310,7 @@ $('#filters').onclick=e=>{const b=e.target.closest('[data-kind]');if(!b)return;d
 function ownerRoute(show){$('#storefront').style.display=show?'none':'block';$('#ownerView').style.display=show?'block':'none';if(show)renderOwner();window.scrollTo(0,0)}
 $('#ownerOpen').onclick=e=>{e.preventDefault();location.href='/login.html?mode=signup&role=owner'};$('#backStore').onclick=()=>ownerRoute(false);
 function renderOwner(){$('#requestCount').textContent='0';$('#listingCount').textContent='0';$('#ownerListings').innerHTML='<div class="request-empty">No facilities published yet. Add your first space when owner verification is connected.</div>';$('#requests').innerHTML='<div class="request-empty">No booking requests yet. Requests can only be received after your venue listing is approved.</div>'}
-$('#addListing').onclick=()=>toast('Owner verification and listing setup are coming next.');
+
 function selectRole(role){localStorage.setItem('ll_role',role);$('#roleModal').classList.remove('open');$('#loginOpen').style.display='none';$('#avatar').style.display='grid';$('#avatar').textContent=role==='seller'?'S':'B';if(role==='seller'){ownerRoute(true)}else{ownerRoute(false);toast('You are set up to discover spaces when they launch.')}}
 $('#loginOpen').onclick=()=>location.href='/login.html';$('#closeRole').onclick=()=>$('#roleModal').classList.remove('open');$('#roleModal').onclick=e=>{if(e.target.id==='roleModal')$('#roleModal').classList.remove('open')};document.querySelectorAll('[data-role]').forEach(b=>b.onclick=()=>selectRole(b.dataset.role));
 renderCards();
