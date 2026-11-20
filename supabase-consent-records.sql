@@ -38,16 +38,8 @@ security definer
 set search_path = public
 as $$
 declare
-  accepted_text text;
-  accepted_time timestamptz;
 begin
-  accepted_text := new.raw_user_meta_data ->> 'legal_terms_accepted_at';
-  if accepted_text is not null and accepted_text <> '' then
-    begin
-      accepted_time := accepted_text::timestamptz;
-    exception when others then
-      accepted_time := now();
-    end;
+  if new.raw_user_meta_data ->> 'legal_terms_accepted' = 'true' then
 
     insert into public.user_consents
       (user_id, purpose, terms_version, privacy_version, accepted_at)
@@ -57,7 +49,7 @@ begin
         'account_registration',
         new.raw_user_meta_data ->> 'legal_terms_version',
         new.raw_user_meta_data ->> 'privacy_notice_version',
-        coalesce(accepted_time, now())
+        now()
       );
   end if;
   return new;
